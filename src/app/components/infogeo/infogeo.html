@@ -1,0 +1,11 @@
+<h2>Postcode Info</h2>
+    <div ng-if="vm.isInterestingData(v)" class="dataRow" ng-repeat="(k,v) in vm.geoData.postcodeData">
+      <span><b>{{k | toReadable}}</b>: {{v}}</span>
+    </div>
+    <h2>Nearest Postcodes Info</h2>
+    <div ng-repeat="postcodeData in vm.geoData.nearestData">
+      <h3><a ng-href="/#{{postcodeData.postcode}}">{{postcodeData.postcode}}</a></h3>
+      <div ng-if="vm.isInterestingData(v)" class="dataRow" ng-repeat="(k,v) in postcodeData">
+        <span><b>{{k | toReadable}}</b>: {{v}}</span>
+      </div>
+    </div>
